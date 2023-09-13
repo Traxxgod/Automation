@@ -15,7 +15,7 @@ let browserStartPromise = puppeteer.launch({
     args: ["--start-maximized", "--disable-notifications"]
 });
 let page, browser;
-browserStartPromise
+browserStartPromise 
     .then(function (browserObj) {
         console.log("Browser opened");
         // new tab 
