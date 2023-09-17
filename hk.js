@@ -1,8 +1,8 @@
-'use strict';
+
 const loginLink = "https://www.hackerrank.com/auth/login";
 // const emailpassObj = require("./secrets");
-const email = 'prakhar123shukla@gmail.com';
-const password = 'Prakhar@01'
+const email = '';        // write your email
+const password = '';   // write your password
 const {answers} = require("./codes");
 const puppeteer = require("puppeteer")
 // creates headless browser
@@ -13,7 +13,7 @@ let browserStartPromise = puppeteer.launch({
     defaultViewport: null,
     // browser setting 
     args: ["--start-maximized", "--disable-notifications"]
-});
+}); 
 let page, browser;
 browserStartPromise 
     .then(function (browserObj) {
@@ -139,10 +139,12 @@ function questionSolver(page, question, answer) {
                 let ctrlIsPressedP = page.keyboard.up("Control");
                 return ctrlIsPressedP;
             }).then(function () {
-                return page.click(".hr-monaco__run-code", { delay: 50 });
-            }).then(function(){
+                return waitAndClick(".hr-monaco__run-code", page,  { delay: 50 });
+            })
+            
+            .then(function(){
                 console.log("Done");
-                let ClickOnSubmitButton = page.click("button[class='ui-btn ui-btn-normal ui-btn-primary pull-right hr-monaco-submit ui-btn-styled']", {delay : 50});
+                let ClickOnSubmitButton = waitAndClick("button[class='ui-btn ui-btn-normal ui-btn-primary pull-right hr-monaco-submit ui-btn-styled']", page,  {delay : 50});
                 return ClickOnSubmitButton;
             })
             .then(function () {
