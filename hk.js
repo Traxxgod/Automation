@@ -1,9 +1,6 @@
 
 const loginLink = "https://www.hackerrank.com/auth/login";
-// const emailpassObj = require("./secrets");
 const {email, password} = require("./PersonalData");
-// const Data.email = 'prakhar123shukla@gmail.com';
-// const Data.password = 'Prakhar@01'
 const {answers} = require("./codes");
 const puppeteer = require("puppeteer")
 // creates headless browser
